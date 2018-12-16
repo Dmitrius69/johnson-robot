@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*Стили форма авторизации, регистрации*/
+#login_dialog {
+  display: none; }
+
+#registration_dialog {
+  display: none; }
+
+.control input {
+  min-width: 200px;
+  max-width: 500px;
+  width: 100%; }
+
+form .error {
+  color: #ff0000;
+  display: block; }
+
+#formReply, #formEdit {
+  display: none; }
+
+.replyto {
+  margin-left: 30px; }
+
+.category p:empty {display: none;}
+
+nav.breadcrumb ul {margin-left: 0;}
+nav.breadcrumb ul li {margin-top: 0;}
+
+/*\Стили форма авторизации, регистрации*/
+/*Стили для Bulma*/
+/*\Стили для Bulma*/

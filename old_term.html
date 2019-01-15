@@ -1,0 +1,56 @@
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="yandex-verification" content="d01897bdc0fae54a" />
+        <script>
+          var source,dest,len,now=0,delay=100,letters=1;
+          function show_text()
+          {
+            source = document.getElementById("pageTextSource");
+
+            dest = document.getElementById("term");
+            len = source.innerHTML.length;
+            show();
+          }
+
+          function show()
+          {   
+            dest.innerHTML += source.innerHTML.substr(now,letters);
+            now+=letters;
+
+            if(now<len)
+    	        setTimeout("show()",delay);
+
+          }
+          function writeTextByJS(id, text, speed){
+
+           var ele = document.getElementById(id),
+           txt = text.join("").split("");
+
+           var interval = setInterval(function(){
+                   if(!txt[0]){
+                   return clearInterval(interval);
+                   };
+                   ele.innerHTML += txt.shift();
+            }, speed != undefined ? speed : 100);
+
+            return false;
+           };
+       </script>
+</head>
+<body onload="writeTextByJS('pageText', ['               ДАННЫЕ ПО ФОНТАНУ       \n',
+                                         '  Ширина: ............... 10 м\n', 
+                                         '  Длина:  ............... 15 м\n',
+                                         '  Объем чаши: ........... 100 кб.м.\n'], 100);">
+<p style="display:none" id="pageTextSource">
+
+Текст для вывода...\nВторая строка...\nТретья строка...
+</p>
+                        
+<!-- Эмулятор экрана -->
+<div id="term" style="color:#039e53;background:#18251f;border:1px solid rgb(247, 17, 17);width: 80%;height: 200px">
+<pre id="pageText"></pre>      
+</div>
+    ОСНОВНОЙ ТЕКСТ СТРАНИЦЫ!
+</body>
+</html>
